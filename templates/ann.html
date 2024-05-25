@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Announcement</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/025/071/768/large_2x/abstract-empty-college-library-interior-room-blurred-classroom-with-bookshelves-with-defocus-effect-generative-ai-photo.jpg ., ;'); /* Path to your background image */
+            background-size: cover;
+            background-position: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* Heading styling */
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        /* Form styling */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background to the form */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Rest of your CSS styles */
+    </style>
+</head>
+<body>
+    <h1>Add Announcement</h1>
+    <form method="POST" action="{{ url_for('announcement') }}">
+        <label for="content">Announcement:</label><br>
+        <textarea id="content" name="content" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

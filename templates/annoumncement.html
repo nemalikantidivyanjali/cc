@@ -1,0 +1,35 @@
+<!-- announcements.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Announcements</h1>
+    <ul>
+    {% for announcement in announcements %}
+        <li>{{ announcement[1] }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

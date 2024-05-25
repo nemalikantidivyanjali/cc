@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% block content %}
+    <br>
+    <br>
+    <div class="container" style="background-color: black; border-radius: 0.5em;width:81.5em;display: flex; background: rgba(60, 60, 60,0.7); position:relative">
+        <a href="/home">
+            <h5>
+                <span class="badge rounded-pill bg-light text-dark" style="padding:10px; margin-top: 10px;">
+                    College Enquiry System
+                </span>
+                
+            </h5>
+        </a>
+        <h5 style="position:absolute;right:5px">
+            <span class="badge rounded-pill bg-light text-dark" style="padding:10px; margin-top: 10px; text-align:right;">
+                {{email}}
+            </span>
+                
+        </h5>
+      
+    </div>
+    <br> <br><br>
+    <div>
+        <div style="text-align: center;">
+            <a href = "/displaycourse"><span class="badge rounded-pill bg-light text-dark">List of Departments</span></a>
+            <a href = "{{url_for('display_enquiry')}}"><span class="badge rounded-pill bg-light text-dark">Show Enquiry Details</span></a>
+            <a href = "/contact"><span class="badge rounded-pill bg-light text-dark">Contact</span></a>
+            <a href = "/getnotify"><span class="badge rounded-pill bg-light text-dark">getnotify</span></a>
+
+            <a href = "/logout"><span class="badge rounded-pill bg-light text-dark" >Logout</span></a>
+        </div>
+    </div>
+    <br>
+    <br>
+   
+    <div class="jumbotron col-lg-6 col-md-6 col-sm-6 col-xs-6 offset-3 float-md-center bg-light p-2 text-dark bg-opacity-75" style="width:50%;height:200%; padding:20px; border-radius: 25px; text-align: center;">
+      <h1 class="display-4">Dear, Future Professional!!!</h1>
+      <p class="lead">Welcome to our College Enquiry System.</p>
+      <hr class="my-4">
+      <p>There are lots of courses available in our college. You can enquire any course at any time and also lock the seat if you want.</p>
+      <p class="lead">
+        <a class="btn btn-dark btn-sm" href="/create_enquiry" role="button">Create Enquiry</a>
+      </p>
+    </div>
+  
+
+
+
+    
+{% endblock %}
+
+

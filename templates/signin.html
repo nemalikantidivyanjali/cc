@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% block content %}
+<br>
+<br>
+<div class="container" style="background-color: black; border-radius: 0.5em;width:81.5em;display: flex; background: rgba(60, 60, 60,0.7);">
+    <h5>
+        <span class="badge rounded-pill bg-light text-dark" style="padding:10px; margin-top: 10px;">
+            College Enquiry System
+        </span>
+    </h5>
+</div>
+<br><br><br><br><br>
+<div class="container bg-light p-2 text-dark bg-opacity-50" style="width:35%;height:200%; padding:20px; border-radius: 25px;">
+   <br>
+   <div class="banner">
+       <h5 style="text-align:center">Sign In</h5>
+   </div> 
+   <form action="" method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+          
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+        </div>
+        <div>{{message}}</div>
+        <div class="d-grid gap-2 col-6 mx-auto" style="padding:10px">
+            <button type="submit" class="btn btn-dark">SignIn</button>
+            <a href = "/forget"><span class="badge bg-dark text-light">forgot password</span></a>
+        </div>
+
+    </form>
+</div>
+<br>
+<div class="container bg-light p-2 text-dark bg-opacity-50" style="width:35%;height:200%; padding:20px; border-radius: 25px;">
+    <b>Don't have an account? Then -------------------></b>
+    <a href = "/signup"><span class="badge bg-dark text-light">Sign Up</span></a>
+
+</div>
+{% endblock %}
+

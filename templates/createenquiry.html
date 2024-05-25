@@ -1,0 +1,158 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<br><br>
+<div class="container" style="background-color: black; border-radius: 0.5em;width:81.5em;display: flex; background: rgba(60, 60, 60,0.7);">
+    <a href="/home"><h5><span class="badge rounded-pill bg-light text-dark" style="padding:10px; margin-top: 10px;">Go Back to Home</span></h5></a>
+</div>
+<br>
+<br>
+<div style="text-align: center;">
+    <a href = "/displaycourse"><span class="badge rounded-pill bg-light text-dark">List of Departments</span></a>
+    <a href = "/create_enquiry"><span class="badge rounded-pill bg-light text-dark">Create Enquiry</span></a>
+    <a href = "/display_enquiry"><span class="badge rounded-pill bg-light text-dark">Show Enquiry Details</span></a>
+    <a href = "/contact"><span class="badge rounded-pill bg-light text-dark">Contact</span></a>
+    <a href = "/logout"><span class="badge rounded-pill bg-light text-dark" >Logout</span></a>
+</div>
+<br>
+<br>
+
+<div class="container bg-light p-2 text-dark bg-opacity-50" style="width:35%;height:200%; padding:20px; border-radius: 25px;">
+   <br>
+   <div class="banner">
+       <h5 style="text-align:center">Create Enquiry</h5>
+   </div> 
+    <form action="" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="inputPassword4">Student Name</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Student Name" name="sname">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">DOB</label>
+          <input type="date" class="form-control" id="inputPassword4" placeholder="Enter DOB" name="dob">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">Father Name</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Father Name" name="fname">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">Mother Name</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Mother Name" name="mname">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">School Name</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter School Name" name="schlname">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">10th Board Name</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter 10th Board Name" name="10thboard">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">10th Percentage</label>
+          <input type="number" step="0.01" class="form-control" id="inputPassword4" placeholder="Enter the 10th std percentage" name="10thpercent">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">12th Board Name</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter 12th Board Name" name="12thboard">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">12th Percentage</label>
+          <input type="number" step="0.01" class="form-control" id="inputPassword4" placeholder="Enter the 12th std percentage" name="12thpercent">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">12th Cutoff</label>
+          <input type="number" step="0.01" class="form-control" id="inputPassword4" placeholder="Enter 12th cutoff" name="12thcutoff">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Select the Caste</label>
+            <select class="form-control" id="inputPassword4"  placeholder="Select the Caste" name="caste">
+              <option value="OBC">OBC</option>
+              <option value="BC">BC</option>
+              <option value="MBC">MBC</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+              <option value="Other">ST</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">Community</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter the Community" name="community">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">Annual Income</label>
+          <input type="number" class="form-control" id="inputPassword4" placeholder="Enter the Annual Income" name="annualincome">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">Quota</label>
+          <select class="form-control" id="inputPassword4" name="quota" placeholder="Enter the Quota">
+              <option value="Counselling">Counselling</option>
+              <option value="Management">Management</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Whether your Brother or Sister studying in this college?</label>
+            <select class="form-control" id="choose" name="yesno" onchange="changeChoose();">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+              
+            </select>
+         </div>
+        <div id="brosisdiv" hidden>
+             <div class="form-group col-md-6">
+              <label for="inputPassword4">If 'Yes', mention your Brother/Sister Name</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="Enter the Brother/Sister Name" name="sisbroname">
+            </div>
+             
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">If 'Yes', mention your Brother/Sister Department Name</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="sisbrodept">
+                {% for dept in departments %}
+                  <option value="{{dept[1]}}">{{dept[1]}}</option>
+                {% endfor %}
+            </select>
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Enter the Department Name you are looking for</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="dept">
+                {% for dept in departments %}
+                  <option value="{{dept[0]}}">{{dept[1]}}</option>
+                {% endfor %}
+            </select>
+         </div>
+      </div>
+      <br>
+      <div class="d-grid gap-2 col-6 mx-auto" style="padding:10px">
+          <button type="submit" class="btn btn-dark btn-md">Create Enquiry</button>
+      </div>
+      <br>
+      {% if message %}
+          <div class="alert alert-danger" role="alert">
+              {{message}}
+          </div>
+      {% endif %}
+
+   </form>
+</div>
+
+    <script>
+        let sisbroField = document.getElementById('brosisdiv');
+    
+        function changeChoose(){
+        let chooseField = document.getElementById('choose');
+        console.log(chooseField)
+        if (chooseField.value == 'Yes'){
+            sisbroField.hidden = false;
+        } else {
+            sisbroField.hidden = true;
+        }
+    }
+    </script>
+
+
+
+
+{% endblock %}

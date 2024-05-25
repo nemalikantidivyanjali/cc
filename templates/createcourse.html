@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<br><br>
+<div class="container" style="background-color: black; border-radius: 0.5em;width:81.5em;display: flex; background: rgba(60, 60, 60,0.7);">
+        <a href="/admin">
+            <h5>
+                <span class="badge rounded-pill bg-light text-dark" style="padding:10px; margin-top: 10px;">
+                    Go to Admin Page
+                </span>
+            </h5>
+</div>
+<br><br>
+<div style="text-align: center;">
+    <a href = "/manageusers"><span class="badge rounded-pill bg-light text-dark">Manage Users</span></a>
+    <a href = "/createcourse"><span class="badge rounded-pill bg-light text-dark">Create Course</span></a>
+    <a href = "/manageenquiry"><span class="badge rounded-pill bg-light text-dark">Manage Enquiry</span></a>
+    <a href = "/logout"><span class="badge rounded-pill bg-light text-dark" >Logout</span></a>
+</div>
+<br>
+<br>
+<div class="container bg-light p-2 text-dark bg-opacity-50" style="width:35%;height:200%; padding:20px; border-radius: 25px;">
+   <br>
+    <div class="banner">
+        <h5 style="text-align:center">Create Course</h5>
+    </div> 
+    <form method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="inputEmail4">Department Id</label>
+          <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Department Id" name="deptid">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">Department Name</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Department Name" name="deptname">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Total Seats</label>
+        <input type="number" class="form-control" id="inputAddress" placeholder="Total Seats" name="totalseats">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Intake</label>
+        <input type="number" class="form-control" id="inputAddress2" placeholder="Intake" name="intake">
+      </div>
+      
+      <div class="d-grid gap-2 col-6 mx-auto" style="padding:10px">
+          <button type="submit" class="btn btn-dark btn-md">Create Course</button>
+      </div>
+    </form>
+</div>
+
+{% endblock %}

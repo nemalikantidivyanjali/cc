@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-image: url('/static/images/background\ image.png');
+            background-attachment: fixed;
+            background-size: cover;
+            color: red;
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <br><br>
+    <div class="container" style="background-color: black; border-radius: 0.5em;width:81.5em;display: flex; background: rgba(60, 60, 60,0.7);">
+        <a href="/home"><h5><span class="badge rounded-pill bg-light text-dark" style="padding:10px; margin-top: 10px;">Go Back to Home</span></h5></a>
+    </div>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <a href = "/displaycourse"><span class="badge rounded-pill bg-light text-dark">List of Departments</span></a>
+        <a href = "/create_enquiry"><span class="badge rounded-pill bg-light text-dark">Create Enquiry</span></a>
+        <a href = "/display_enquiry/"><span class="badge rounded-pill bg-light text-dark">Show Enquiry Details</span></a>
+        <a href = "/contact"><span class="badge rounded-pill bg-light text-dark">Contact</span></a>
+        <a href = "/logout"><span class="badge rounded-pill bg-light text-dark" >Logout</span></a>
+    </div>
+    <br><br><br><br>
+    <div class="opacity-100">
+        <div class="container bg-light p-2 text-dark" style="width:50%;height:200%; padding:20px; border-radius: 25px;">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Enquiry No.</th>
+                        <th scope="col">Date of Enquiry</th>
+                        <th scope="col">Department Id</th>
+                        <th scope="col">Seat Loacked/Not Locked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for enquiry in enquiry_details %}
+                    <tr>
+                        <td>{{enquiry[0]}}</td>
+                        <td>{{enquiry[2]}}</td>
+                        <td>{{enquiry[3]}}</td>
+                        <td>{{enquiry[4]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
